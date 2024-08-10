@@ -46,6 +46,9 @@ enum custom_keycodes {
 #define KC_ESCLOW LT(_LOWER, KC_ESC)
 #define KC_TACTL CTL_T(KC_TAB)
 #define M_ALTD MT(MOD_LALT,KC_D)
+#define M_CMDF MT(MOD_LGUI,KC_F)
+#define M_CMDM MT(MOD_LGUI,KC_M)
+#define M_ALTCOMM MT(MOD_LALT,KC_COMM)
 #define KC_ADJ MO(_ADJUST)
 #define KC_FKEYS LT(_FKEYS, KC_F)
 #define KC_SHINS LSFT(KC_INS)
@@ -53,11 +56,11 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-    KC_ESCLOW,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  KC_BSPC,\
+    KC_ESCLOW,    KC_Q,    KC_W,    KC_E, KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  KC_BSPC,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     KC_TACTL,    KC_A,    KC_S, M_ALTD, KC_FKEYS,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOT,\
+     KC_TACTL,    KC_A,    KC_S, M_ALTD,  M_CMDF,    KC_G,                      KC_H,    KC_J,   KC_K,    KC_L, KC_SCLN, KC_QUOT,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_BSHHKB,\
+      KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                     KC_N,    M_CMDM, M_ALTCOMM,  KC_DOT, KC_SLSH, KC_BSHHKB,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_LALT, KC_LGUI, KC_SPC,  KC_ERAISE, KC_RGUILOW, KC_RALT \
                                       //`--------------------------'  `--------------------------'
@@ -92,7 +95,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_F12,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                        KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_TRNS, KC_TRNS, KC_TRNS,    KC_F, KC_TRNS, KC_TRNS,                        KC_F1,   KC_F2,   KC_F3,   KC_F4,  KC_F5,   KC_F12,\
-
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
